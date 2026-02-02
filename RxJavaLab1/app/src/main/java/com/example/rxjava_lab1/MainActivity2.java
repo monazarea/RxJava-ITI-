@@ -1,7 +1,6 @@
 package com.example.rxjava_lab1;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -16,7 +15,7 @@ import java.util.Arrays;
 
 import io.reactivex.rxjava3.core.Observable;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity2 extends AppCompatActivity {
     RecyclerView recyclerView;
     Button btn_Array;
     Button btn_Iterable;
@@ -38,54 +37,27 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setAdapter(adapter);
 
-        Observable observable = Observable.intervalRange(
-                1,
-                5,
-                0,
-                1,
-                java.util.concurrent.TimeUnit.SECONDS
-        );
-        observable.subscribe(
-                item -> {
-                    Log.d("asd->","onNext:"+item);
-                },
-                error -> {
-                    Log.d("asd->","onError:");
-
-                },
-                () -> {
-                    Log.d("asd->","onComplete:");
-                }
-        );
-
-        Observable observablenever = Observable.never();
-        observablenever.subscribe(
-                item -> {
-                    Log.d("asd->","Never: onNext:"+item);
-                },
-                error -> {
-                    Log.d("asd->","Never: onError:");
-                },
-                () -> {
-                    Log.d("asd->","Never: onComplete:");
-                }
-        );
-
         btn_Array.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Observable<Integer> observable = io.reactivex.rxjava3.core.Observable.fromArray(arrays);
+               Observable observable = Observable.intervalRange(
+                        1,
+                        5,
+                        0,
+                        1,
+                        java.util.concurrent.TimeUnit.SECONDS
+                );
                 observable.subscribe(
                         item -> {
-                            list.add("From Array: onNext: " + item);
+                            list.add("intervalRange onNext: " + item);
                             adapter.notifyDataSetChanged();
                         },
                         error -> {
-                            list.add("From Array: onError: " + error.getMessage());
+                            list.add("intervalRange onError");
                             adapter.notifyDataSetChanged();
                         },
                         () -> {
-                            list.add("From Array: onComplete");
+                            list.add("intervalRange onComplete");
                             adapter.notifyDataSetChanged();
                         }
                 );
