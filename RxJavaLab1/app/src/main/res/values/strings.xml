@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">RxJava-Lab1</string>
+    <string name="from_iterable">From Iterable</string>
+    <string name="from_array">From Array</string>
+</resources>
