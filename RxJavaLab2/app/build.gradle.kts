@@ -3,13 +3,13 @@ plugins {
 }
 
 android {
-    namespace = "com.example.rxjava_lab1"
+    namespace = "com.example.rxjavalab2"
     compileSdk {
         version = release(36)
     }
 
     defaultConfig {
-        applicationId = "com.example.rxjava_lab1"
+        applicationId = "com.example.rxjavalab2"
         minSdk = 24
         targetSdk = 36
         versionCode = 1
@@ -38,11 +38,10 @@ dependencies {
     implementation(libs.material)
     implementation(libs.activity)
     implementation(libs.constraintlayout)
-    implementation(libs.recyclerview)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
     implementation("io.reactivex.rxjava3:rxjava:3.1.12")
-    implementation("io.reactivex.rxjava3:rxandroid:3.1.12")
+    implementation("io.reactivex.rxjava3:rxandroid:3.0.2")
 
 }

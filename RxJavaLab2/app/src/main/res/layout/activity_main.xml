@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Search EditText -->
+    <EditText
+        android:id="@+id/etSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Search name..."
+        android:inputType="textPersonName"
+        android:padding="12dp" />
+
+    <!-- Space -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="12dp" />
+
+    <!-- Results TextArea -->
+    <TextView
+        android:id="@+id/tvResults"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Results will appear here"
+        android:textSize="16sp"
+        android:padding="12dp"
+        android:background="#EEEEEE" />
+
+</LinearLayout>
